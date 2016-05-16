@@ -34,15 +34,33 @@
   </extension>
 </addon>
 
-<addon id="repository.podgod-testing-repo" name="podgod repo - TEST" version="1.5" provider-name="podgod">
-	<extension point="xbmc.addon.repository" name="PodGod Addon Repository">
-		<info compressed="false">http://raw.githubusercontent.com/podgod/test/master/addons.xml</info>
-		<checksum>http://raw.githubusercontent.com/podgod/test/master/addons.xml.md5</checksum>
-		<datadir zip="true">http://raw.githubusercontent.com/podgod/test/master</datadir>
+<addon id="plugin.video.myfirstplugin"
+       name="My First Plugin...XBMCHUB.COM"
+       version="1.0"
+       provider-name="Mikey1234">
+  <requires>
+    <import addon="xbmc.python" version="2.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+            library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">My First Plugin</summary>
+    <description lang="en">my first plugin description</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="repository.podgodbeta" name="podgod Beta REPO" version="1.0" provider-name="podgod">
+	<extension point="xbmc.addon.repository" name="podgod Addon Repository">
+		<info compressed="false">http://github.com/podgod/test/raw/master/addons.xml</info>
+		<checksum>http://github.com/podgod/test/raw/master/addons.xml.md5</checksum>
+		<datadir zip="true">http://github.com/podgod/test/raw/master/zips</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>Test addons</summary>
-		<description>Test unreleased addons and test versions from podgod</description>
+		<summary>Install MY Addons</summary>
+		<description>Download and install addons from podgod.......For OFFICIAL !! Support Visit TVADDONS.COM</description>
 		<platform>all</platform>
 	</extension>
 </addon>
