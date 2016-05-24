@@ -44,7 +44,7 @@ def search(search_func):
 
 def get_icon_path(icon_name):
     addon_path = plugin.addon.getAddonInfo("path")    
-    return os.path.join(addon_path, 'resources', 'img', icon_name+".png")
+    return os.path.join('special://home/addons/script.ccloudmeta/', icon_name+".png")
 
 def get_genre_icon(genre_id):
     genre_id = int(genre_id)

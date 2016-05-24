@@ -224,5 +224,5 @@ msgid "Library setup"
 msgstr "Bibliotheek instellen"
 
 msgctxt "#30628"
-msgid "Play with..."
+msgid "Choose Your Channel..."
 msgstr "Afspelen met..."

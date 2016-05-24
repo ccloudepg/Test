@@ -27,7 +27,7 @@ import urllib, urllib2, sys, re, os, random, unicodedata, cookielib, shutil
 import xbmc, xbmcgui, xbmcplugin, xbmcaddon, requests, base64, gui
 
 
-
+cCloudMeta = xbmc.translatePath('special://home/userdata/addon_data/script.ccloudmeta/players')
 GuideDB = xbmc.translatePath('special://home/userdata/addon_data/script.ccloudtv/source.db')
 
 addon       = xbmcaddon.Addon()
@@ -37,8 +37,12 @@ addonname   = addon.getAddonInfo('name')
 if os.path.exists(GuideDB):
 	os.remove(GuideDB)
 	
-line1 = 'Welcome to the [B][COLOR yellow]cCloud TV Guide.[/COLOR][/B] This is a beta version'
-line2 = 'and is a work in progress so not all channels are working.'
+if not os.path.exists(cCloudMeta):
+	xbmc.executebuiltin('XBMC.RunPlugin(plugin://script.ccloudmeta/setup/)')
+
+	
+line1 = 'Welcome to the [B][COLOR yellow]cCloud TV Guide.[/COLOR][/B] This beta version is'
+line2 = 'a work in progress, so not all channels are working.'
 line3 = 'Check the announcements section for future update info'
 
  

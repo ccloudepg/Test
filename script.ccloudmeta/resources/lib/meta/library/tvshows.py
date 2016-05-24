@@ -63,7 +63,7 @@ def add_tvshow_to_library(library_folder, show, play_plugin = None):
         except:
             pass
 
-        # Create play with file
+        # Create Choose Your Channel...le
         if play_plugin is not None:
             player_filepath = os.path.join(show_folder, 'player.info')
             player_file = xbmcvfs.File(player_filepath, 'w')

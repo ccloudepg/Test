@@ -43,7 +43,7 @@ ondemand_regex = '[ON\'](.*?)[\'nd]'
 yt = 'http://www.youtube.com'
 m3u = 'WVVoU01HTkViM1pNTTBKb1l6TlNiRmx0YkhWTWJVNTJZbE01ZVZsWVkzVmpSMmgzVURKck9WUlViRWxTYXpWNVZGUmpQUT09'.decode('base64')
 text = 'http://pastebin.com/raw.php?i=Zr0Hgrbw'
-GuideDirectory = xbmc.translatePath('special://home/userdata/addon_data/script.renegadestv/')
+GuideDirectory = xbmc.translatePath('special://home/addons/script.ccloudtv/')
 GuideINI = xbmc.translatePath('special://home/userdata/addon_data/script.renegadestv/addons2.ini')
 xbmcplugin.setContent(int(sys.argv[1]), 'movies')
 
@@ -84,8 +84,8 @@ def main():
 	if (len(CCLOUDTV_SRV_URL) < 1 ):		
 		mysettings.openSettings()
 		xbmc.executebuiltin("Container.Refresh")
-	addDir('[COLOR yellow][B]TV Guide[/B][/COLOR]', 'guide', 97, '%s/guide.png'% iconpath, fanart)
-	#addDir('Open TV Guide/Update Channels','INI',95,'%s/guide.png'% iconpath,fanart)
+	#addDir('[COLOR yellow][B]Alt TV Guide[/B][/COLOR]', 'guide', 97, '%s/guide.png'% iconpath, fanart)
+	addDir('[COLOR yellow][B]cCloud TV Guide[/COLOR] [COLOR red]  NEW![/B][/COLOR]','TVGuide',95,'%s/guide.png'% iconpath,fanart)
 	addDir('[COLOR royalblue][B]English[/B][/COLOR]', 'english', 62, '%s/english.png'% iconpath, fanart)
 	addDir('[COLOR royalblue][B]Top 10[/B][/COLOR]', 'top10', 51, '%s/top10.png'% iconpath, fanart)
 	addDir('[COLOR royalblue][B]Sports[/B][/COLOR]', 'sports', 52, '%s/sports.png'% iconpath, fanart)
@@ -104,18 +104,15 @@ def main():
 	if getSetting("enable_adult_section") == 'true':	
 		addDir('[COLOR magenta][B]Adult(18+)[/B][/COLOR]', 'adult', 98, '%s/adult.png'% iconpath, fanart)
 
-def createini():
+def TVGuide():
 	if not os.path.exists(GuideDirectory):
-		dialog.ok(addon_id, 'Please make sure you have TV Guide installed and you have run it at least once then use this function to enable integration')
-		dialog.notification(addonname, 'Please install and run TV Guide at least once', xbmcgui.NOTIFICATION_ERROR );
+		dialog = xbmcgui.Dialog()
+		dialog.ok('addon_id', 'Please make sure you have cCloud TV Guide installed from the podgod repo')
+		dialog.notification(addonname, 'Please install cCloud TV Guide', xbmcgui.NOTIFICATION_ERROR );
 	
 	if os.path.exists(GuideDirectory):
 		addonsini = urllib.URLopener()
-		addonsini.retrieve("https://raw.githubusercontent.com/podgod/podgod/master/cCloud_TV_Guide/XML/combined.ini", GuideINI)
-        with open(GuideDirectory+"/addons2.ini", "a") as file:
-            file.write('https://raw.githubusercontent.com/podgod/podgod/master/cCloud_TV_Guide/XML/combined.ini\n')
-        shutil.rmtree(GuideDirectory , ignore_errors=True)
-    	xbmc.executebuiltin("RunAddon(script.renegadestv)")
+    	xbmc.executebuiltin("RunAddon(script.ccloudtv)")
         sys.exit()
 		
 def removeAccents(s):
@@ -993,7 +990,7 @@ elif mode == 64:
 	international()
 	
 elif mode==95:
-    createini()
+    TVGuide()
 		
 elif mode == 97:
 	guide()

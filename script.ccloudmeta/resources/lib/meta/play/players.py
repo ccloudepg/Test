@@ -37,7 +37,7 @@ def get_players(media, filters = {}):
     
     players = []
     
-    players_path = "special://profile/addons/{0}/players/".format(plugin.id)
+    players_path = "special://profile/addon_data/{0}/players/".format(plugin.id)
     files = [x for x in xbmcvfs.listdir(players_path)[1] if x.endswith(EXTENSION)]
     for file in files:
         path = players_path + file

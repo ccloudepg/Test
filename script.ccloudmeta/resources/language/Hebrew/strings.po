@@ -224,7 +224,7 @@ msgid "Library setup"
 msgstr "הגדרת ספריה"
 
 msgctxt "#30628"
-msgid "Play with..."
+msgid "Choose Your Channel..."
 msgstr "נגן באמצעות..."
 
 msgctxt "#30414"

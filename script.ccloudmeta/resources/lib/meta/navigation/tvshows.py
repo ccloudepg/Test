@@ -210,7 +210,7 @@ def set_library_player(path):
     # get selected player
     player = players[selection]
     
-    # Create play with file
+    # Create Choose Your Channel...le
     player_filepath = os.path.join(path, 'player.info')
     player_file = xbmcvfs.File(player_filepath, 'w')
     content = "{0}".format(player.id)
@@ -250,7 +250,7 @@ def tv_add_to_library(id):
     players.insert(0, ADDON_DEFAULT)
 
     # let the user select one player
-    selection = dialogs.select(_("Play with..."), [p.title for p in players])
+    selection = dialogs.select(_("Choose Your Channel..."), [p.title for p in players])
     if selection == -1:
         return
     

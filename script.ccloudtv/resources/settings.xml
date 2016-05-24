@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <settings>
+	
 	<category label="30101">
+        <setting label="cCloudMeta" type="lsep"/>
+        <setting subsetting="true" option="close" enable="!eq(-2,)" label="cCloud Initial Setup: [B][COLOR blue] Click Here If Channels Are Not Loading[/COLOR][/B]" type="action" action="RunPlugin(plugin://script.ccloudmeta/setup/)"/>
+        <setting label="Source" type="lsep"/>
 		<setting id="xmltv.type" label="30123" type="enum" default="0" lvalues="30126"/>
         <setting id="xmltv.interval" label="30128" type="enum" default="2" lvalues="30129|30130|30131|30132" visible="lt(-1,6)" />
         <setting id="xmltv.file" label="30103" type="file" visible="eq(-2,6)" />

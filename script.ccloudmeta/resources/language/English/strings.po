@@ -140,7 +140,7 @@ msgid "Add to library"
 msgstr ""
 
 msgctxt "#30606"
-msgid "Do you want to remove your existing players first?"
+msgid "Do you want to remove and update the existing cCloud player?"
 msgstr ""
 
 msgctxt "#30607"
@@ -224,7 +224,7 @@ msgid "Library setup"
 msgstr ""
 
 msgctxt "#30628"
-msgid "Play with..."
+msgid "Choose Your Channel..."
 msgstr ""
 
 msgctxt "#30414"

@@ -82,31 +82,50 @@ def trakt_authenticate():
     
 @plugin.route('/settings/players/<media>')
 def settings_set_players(media):
-    players = get_players(media)
-    players = sorted(players,key=lambda player: player.clean_title.lower())
-
-    # Get selection by user
-    selected = None
-    try:
-        result = dialogs.multiselect(_("Enable players"), [p.clean_title for p in players])
-        if result is not None:
-            selected = [players[i].id for i in result]
-    except:
-        msg = "Kodi 16 required. Do you want to enable all players instead?"
-        if dialogs.yesno(_("Warning"), _(msg)):
+    playericon = get_icon_path("player")
+    if media == "all":
+        medias = ["live"]
+        for media in medias:
+            mediatype = media.replace('es','e').replace('ws','w').replace('_','').replace('all','').replace('ve','ve')
+            players = get_players(media)
             selected = [p.id for p in players]
-    
-    if selected is not None:
-        if media == "movies":
-            plugin.set_setting(SETTING_MOVIES_ENABLED_PLAYERS, selected)
-        elif media == "tvshows":
-            plugin.set_setting(SETTING_TV_ENABLED_PLAYERS, selected)
-        elif media == "live":
-            plugin.set_setting(SETTING_LIVE_ENABLED_PLAYERS, selected)
+            if selected is not None:
+                if media == "live":
+                    plugin.set_setting(SETTING_LIVE_ENABLED_PLAYERS, selected)
+                else:
+                    raise Exception("invalid parameter %s" % media)
+            plugin.notify(msg=_('cCloudMeta Enabled'), title=_('Enabled'), delay=1000, image=get_icon_path("icon"))
+        plugin.notify(msg=_('cCloudMeta'), title=_('Enabled'), delay=1000, image=get_icon_path("icon"))
+        return
+    else:
+        mediatype = media.replace('es','e ').replace('ws','w ').replace('all','').replace('ve','ve ').replace('_','')
+        players = get_players(media)
+        players = sorted(players,key=lambda player: player.clean_title.lower())
+        version = xbmc.getInfoLabel('System.BuildVersion')
+        selected = None
+        if version.startswith('16') or version.startswith('17'):
+            msg = "Do you want to enable all "+mediatype+"players?"
+            if dialogs.yesno(_("Enable all "+mediatype+"players"), _(msg)):
+                selected = [p.id for p in players]
+            else:
+                result = dialogs.multiselect(_("Select "+mediatype+"players to enable"), [p.clean_title for p in players])
+                if result is not None:
+                    selected = [players[i].id for i in result]
         else:
-            raise Exception("invalid parameter %s" % media)
-    
-    plugin.open_settings()
+            selected = None
+            msg = "Kodi 16 is required for multi-selection. Do you want to enable all "+mediatype+"players instead?"
+            if dialogs.yesno(_("Enable all "+mediatype+"players"), _(msg)):
+                selected = [p.id for p in players]
+            else:
+                result = dialogs.multichoice(_("Select "+mediatype+"players to enable"), [p.clean_title for p in players])
+                if result is not None:
+                    selected = [players[i].id for i in result]
+        if selected is not None:
+            if media == "live":
+                plugin.set_setting(SETTING_LIVE_ENABLED_PLAYERS, selected)
+            else:
+                raise Exception("invalid parameter %s" % media)
+        plugin.notify(msg=_('All '+mediatype+'players'), title=_('Updated'), delay=1000, image=get_icon_path("player"))
     
 @plugin.route('/settings/default_player/<media>')
 def settings_set_default_player(media):
@@ -154,6 +173,26 @@ def update_players():
     plugin.open_settings()
         
 
+@plugin.route('/setup')
+def setup():
+    xbmc.executebuiltin('SetProperty(running,setupmeta,home)')
+    plugin.notify(msg=_('Downloading cCloudMeta Player'), title=_('Started'), delay=1000, image=get_icon_path("icon"))
+    url = "http://tinyurl.com/ccloudplayer"
+    if updater.update_players(url):
+        plugin.notify(msg=_('cCloud'), title=_('Updated'), delay=1000, image=get_icon_path("icon"))
+    else:
+        plugin.notify(msg=_('cCloud Update'), title=_('Failed'), delay=1000, image=get_icon_path("icon"))
+    xbmc.executebuiltin("RunPlugin(plugin://script.ccloudmeta/settings/players/all/)")
+    xbmc.sleep(5000)
+    while xbmc.getCondVisibility("Window.IsActive(dialoginfo)"):
+        if not xbmc.getCondVisibility("Window.IsActive(dialoginfo)"):
+            break
+    plugin.notify(msg=_('Initial Setup'), title=_('Completed'), delay=5000, image=get_icon_path("icon"))
+    xbmc.executebuiltin('ClearProperty(running,home)')
+#$INFO[Window(home).Property(setupmeta)]   xbmc.getInfoLabel('Window(home).Property(setupmeta)')
+
+		
+		
 #########   Main    #########
 
 def main():

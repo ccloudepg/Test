@@ -72,7 +72,7 @@ def get_video_link(players, params, mode, use_simple=False):
     selection = None
     try:
         if len(players) > 1 and use_simple:
-            index = dialogs.select(_("Play with..."), [player.title for player in players])
+            index = dialogs.select(_("Choose Your Channel..."), [player.title for player in players])
             if index == -1:
                 return None
             players = [players[index]]
@@ -85,7 +85,7 @@ def get_video_link(players, params, mode, use_simple=False):
             dialogs.wait_for_dialog("progressdialog", 5)
             pool_size = plugin.get_setting(SETTING_POOL_SIZE, converter=int)
             populator = lambda : execute(resolve_f, players, lister.stop_flag, pool_size)
-            selection = dialogs.select_ext(_("Play with..."), populator, len(players))
+            selection = dialogs.select_ext(_("Choose Your Channel..."), populator, len(players))
             
         else:
             result = resolve_f(players[0])
@@ -94,7 +94,7 @@ def get_video_link(players, params, mode, use_simple=False):
                 if len(links) == 1:
                     selection = links[0]
                 else:
-                    index = dialogs.select(_("Play with..."), [x['label'] for x in links])
+                    index = dialogs.select(_("Choose Your Channel..."), [x['label'] for x in links])
                     if index > -1:
                         selection = links[index]
             else:

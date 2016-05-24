@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.ccloudtv" name="cCloud TV Guide" version="0.0.1" provider-name="podgod">
+<addon id="script.ccloudtv" name="cCloud TV Guide" version="0.0.7d" provider-name="podgod">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="script.module.simplejson" version="2.0.10"/>
@@ -63,7 +63,7 @@
 		<description lang="sk">TV Program s podporou XMLTV a streamovania</description>
 		<description lang="sv">TV-guide med XML-TV och strömningsstöd</description>
 		<description lang="zh">支持XMLTV和流的电视指南</description>
-		<disclaimer lang="en">cCloud TV Guide is a fork of FTV Guide by Bluezed and RayW1986, which is based on the original TV Guide addon by twinther. This is modified for use with the cCloud TV addon only. If you want an EPG with more features and compatible with other addons, please use FTV Guide, Redegades TV Guide or iVue TV Guide</disclaimer>
+		<disclaimer lang="en">cCloud TV Guide is a fork of FTV Guide by Bluezed and RayW1986, which is based on the original TV Guide addon by twinther. This is modified for use with the cCloud TV addon and will only work with addons from my repo. If you want an EPG with more channels, features and compatible with other addons, please use FTV Guide, Redegades TV Guide or iVue TV Guide</disclaimer>
 		<language></language>
 		<platform>all</platform>
 		<license>GPLv2</license>
