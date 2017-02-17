@@ -11,24 +11,24 @@
     <controls>
 
         <control type="image">
-            <posx>150</posx>
-            <posy>100</posy>
+            <posx>180</posx>
+            <posy>120</posy>
             <width>1010</width>
-            <height>510</height>
+            <height>500</height>
             <texture>menu.png</texture>
         </control>
         <control type="image">
-            <posx>150</posx>
-            <posy>100</posy>
+            <posx>180</posx>
+            <posy>120</posy>
             <width>1010</width>
-            <height>510</height>
+            <height>500</height>
             <texture>menu.png</texture>
         </control>
 		
 		<control type="label">
            <description>Help and Tips</description>
             <posx>670</posx>
-            <posy>115</posy>
+            <posy>180</posy>
             <width>180</width>
             <height>50</height>
             <textcolor>ffffffff</textcolor>
@@ -42,7 +42,7 @@
 <control type="label">
            <description>Help and Tips</description> 
             <posx>423</posx>
-            <posy>150</posy>
+            <posy>200</posy>
             <width>680</width>
             <height>400</height>
             <textcolor>ffffffff</textcolor>
@@ -59,12 +59,12 @@
                                             
 
         <control type="image" id="4100">
-            <posx>160</posx>
-            <posy>100</posy>
-            <width>240</width>
+            <posx>195</posx>
+            <posy>130</posy>
+            <width>170</width>
             <height>80</height>
             <aspectratio>keep</aspectratio>
-			<visible>true</visible>
+			<visible>false</visible>
         </control>
         <control type="label" id="4101">
             <posx>160</posx>
@@ -78,9 +78,9 @@
         </control>
 
         <control type="button" id="4000"><!-- Watch Stream -->
-            <posx>160</posx>
+            <posx>200</posx>
             <posy>228</posy>
-            <width>240</width>
+            <width>200</width>
             <height>50</height>
             <texturefocus>menu-grey-focus.png</texturefocus>
             <texturenofocus>button-grey.png</texturenofocus>
@@ -93,9 +93,9 @@
         </control>
 
         <control type="button" id="4001"><!-- Choose Stream -->
-            <posx>160</posx>
+            <posx>200</posx>
             <posy>280</posy>
-            <width>240</width>
+            <width>200</width>
             <height>50</height>
             <texturefocus>menu-grey-focus.png</texturefocus>
             <texturenofocus>button-grey.png</texturenofocus>
@@ -131,9 +131,9 @@
 			<visible>false</visible>
         </control>
         <control type="button" id="4002"><!-- REMINDER -->
-            <posx>160</posx>
+            <posx>200</posx>
             <posy>332</posy>
-            <width>240</width>
+            <width>200</width>
             <height>50</height>
             <texturefocus>menu-grey-focus.png</texturefocus>
             <texturenofocus>button-grey.png</texturenofocus>
@@ -145,9 +145,9 @@
             <textcolor>ffffffff</textcolor>
         </control>
         <control type="button" id="4003"><!-- CHANNELS -->
-            <posx>160</posx>
+            <posx>200</posx>
             <posy>384</posy>
-            <width>240</width>
+            <width>200</width>
             <height>50</height>
             <texturefocus>menu-grey-focus.png</texturefocus>
             <texturenofocus>button-grey.png</texturenofocus>

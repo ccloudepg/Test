@@ -41,23 +41,23 @@
         </control>
 
         <control type="image">
-            <posx>150</posx>
-            <posy>100</posy>
+            <posx>170</posx>
+            <posy>110</posy>
             <width>1010</width>
             <height>510</height>
             <texture>menu-stream.png</texture>
         </control>
         <control type="image">
-            <posx>150</posx>
-            <posy>100</posy>
+            <posx>170</posx>
+            <posy>110</posy>
             <width>1010</width>
             <height>510</height>
             <texture>menu-stream.png</texture>
         </control>
 
         <control type="label"><!-- Set Up Stream Text -->
-            <posx>180</posx>
-            <posy>105</posy>
+            <posx>250</posx>
+            <posy>115</posy>
             <width>174</width>
             <height>40</height>
 			<font>font13</font>
@@ -67,8 +67,8 @@
         </control>
 
         <control type="button" id="101">
-            <posx>580</posx>
-            <posy>105</posy>
+            <posx>590</posx>
+            <posy>120</posy>
             <width>170</width>
             <height>40</height>
             <align>center</align>
@@ -84,7 +84,7 @@
         </control>
         <control type="button" id="102">
             <posx>814</posx>
-            <posy>105</posy>
+            <posy>120</posy>
             <width>170</width>
             <height>40</height>
             <align>center</align>
@@ -100,7 +100,7 @@
         </control>
         <control type="button" id="103">
             <posx>985</posx>
-            <posy>105</posy>
+            <posy>120</posy>
             <width>170</width>
             <height>40</height>
             <align>center</align>
@@ -123,7 +123,7 @@
         </control>
 
         <control type="group" id="1000">
-            <posx>40</posx>
+            <posx>80</posx>
             <posy>120</posy>
             <width>800</width>
             <height>340</height>
@@ -184,7 +184,7 @@
                 <onright>1003</onright>
             </control>
             <control type="button" id="1003">
-                <posx>774</posx>
+                <posx>730</posx>
                 <posy>445</posy>
                 <width>170</width>
                 <height>40</height>
@@ -200,7 +200,7 @@
                 <onright>1004</onright>
             </control>
             <control type="button" id="1004">
-                <posx>945</posx>
+                <posx>900</posx>
                 <posy>445</posy>
                 <width>170</width>
                 <height>40</height>

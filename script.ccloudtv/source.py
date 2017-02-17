@@ -822,7 +822,7 @@ class XMLTVSource(Source):
     cCloud_UKSKY = 'guide_uksky.xmltv'
     cCloud_USTV = 'guide_ustvnow.xmltv'
     cCloud_USUKBASIC = 'guide_usukbasic.xmltv'
-    cCloud_URL = 'https://archive.org/download/guide_201604/'
+    cCloud_URL = 'http://epg.brosgit.pro/'
     KEY = 'xmltv'
     INI_TYPE_CCLOUD = 0
     INI_TYPE_CUSTOM = 1
