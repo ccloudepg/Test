@@ -2,13 +2,13 @@
 <addon id="repository.podgod-testing-repo" name="podgod repo - TEST" version="1.8" provider-name="podgod">
 	<extension point="xbmc.addon.repository" name="PodGod Addon Repository">
         <dir>
-	      <info compressed="false">http://github.com/podgod/Test/raw/master/addons.xml</info>
-	      <checksum>http://github.com/podgod/Test/raw/master/addons.xml.md5</checksum>
-	      <datadir zip="true">http://github.com/podgod/Test/raw/master/zips</datadir>
+	      <info compressed="false">http://github.com/ccloudepg/Test/raw/master/addons.xml</info>
+	      <checksum>http://github.com/ccloudepg/Test/raw/master/addons.xml.md5</checksum>
+	      <datadir zip="true">http://github.com/ccloudepg/Test/raw/master/zips</datadir>
         </dir>
-        <info compressed="false">http://github.com/podgod/Test/raw/master/addons.xml</info>
-        <checksum>http://github.com/podgod/Test/raw/master/addons.xml.md5</checksum>
-        <datadir zip="true">http://github.com/podgod/Test/raw/master/zips</datadir>
+        <info compressed="false">http://github.com/ccloudepg/Test/raw/master/addons.xml</info>
+        <checksum>http://github.com/ccloudepg/Test/raw/master/addons.xml.md5</checksum>
+        <datadir zip="true">http://github.com/ccloudepg/Test/raw/master/zips</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>Test addons</summary>
