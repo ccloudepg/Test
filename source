@@ -1,0 +1,9 @@
+class XMLTVSource(Source):
+    PLUGIN_DATA = xbmc.translatePath(os.path.join('special://profile', 'addon_data', 'script.ccloudtv'))
+    cCloud_BASIC = 'guide.xml'
+    cCloud_ALL = 'guide.xml'
+    cCloud_UKBASIC = 'guide_ukbasic.xmltv'
+    cCloud_UKSKY = 'guide_uksky.xmltv'
+    cCloud_USTV = 'guide_ustvnow.xmltv'
+    cCloud_USUKBASIC = 'guide_usukbasic.xmltv'
+    cCloud_URL = 'http://epg.brosgit.pro/'
